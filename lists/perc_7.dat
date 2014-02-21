@@ -1,0 +1,44 @@
+load('list_train_a.mat');
+ len_str_a=length(str_a);
+ 
+ features_sv_a=[];
+ for i= [3:8]
+     features_nv= get_features( str_a(i,:) );
+     features_sv_a=[features_sv_a;features_nv];
+ end
+ 
+ %--------------------------------------------------------------%
+ load('list_train_f.mat');
+ len_str_f=length(str_f);
+ 
+ features_sv_f=[]
+ for i= [3:8]
+     features_nv= get_features( str_f(i,:) )
+     features_sv_f=[features_sv_f;features_nv]
+ end
+ 
+ %--------------------------------------------------------------%
+ load('list_train_n.mat');
+ len_str_n=length(str_n);
+ 
+ features_sv_n=[]
+ for i= [3:8]
+     features_nv= get_features( str_n(i,:) )
+     features_sv_n=[features_sv_n;features_nv]
+ end
+ 
+ %--------------------------------------------------------------%
+ load('list_train_w.mat');
+ len_str_w=length(str_w);
+ 
+ features_sv_w=[]
+ for i= [3:8]
+     features_nv= get_features( str_w(i,:) )
+     features_sv_w=[features_sv_w;features_nv]
+ end
+     
+
+dlmwrite('emo_a.dat',features_sv_a);
+dlmwrite('emo_n.dat',features_sv_n);
+dlmwrite('emo_f.dat',features_sv_f);
+dlmwrite('emo_w.dat',features_sv_w);
